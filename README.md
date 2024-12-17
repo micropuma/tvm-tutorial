@@ -10,3 +10,8 @@ to support jupyter notebook:
 pip install ipykernel
 python -m ipykernel install --user --name=myenv
 ```
+
+don't know why, failed to install mlc unity?
+
+## Install mlc
+refer to [mlc reference](https://github.com/mlc-ai/mlc-en).
