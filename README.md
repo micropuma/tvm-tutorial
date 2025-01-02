@@ -112,5 +112,11 @@ pip3 install tornado
 pip3 install tornado psutil 'xgboost>=1.1.0' cloudpickle
 ```
 
+## Tips
+在运行tvm的时候，我的conda环境的glibc++版本过低，但是我没有root权限，因此需要如下方式运行python程序：
+```shell
+LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6 python end-to-end.py
+```
+
 ## References 
 1. [TVM from source doc](https://tvm.apache.org/docs/install/from_source.html)
