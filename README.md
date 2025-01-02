@@ -38,6 +38,9 @@ echo "set(USE_LLVM \"llvm-config --ignore-libllvm --link-shared\")" >> config.cm
 echo "set(HIDE_PRIVATE_SYMBOLS ON)" >> config.cmake
 
 # GPU SDKs, turn on if needed
+# specifically set profiler on, so 
+# we can use tvm debugger
+echo "set(USE_PROFILER ON)" >> config.cmake
 echo "set(USE_CUDA   ON)" >> config.cmake
 echo "set(USE_METAL  OFF)" >> config.cmake
 echo "set(USE_VULKAN OFF)" >> config.cmake
