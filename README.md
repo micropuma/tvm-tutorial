@@ -44,14 +44,14 @@ echo "set(USE_VULKAN OFF)" >> config.cmake
 echo "set(USE_OPENCL OFF)" >> config.cmake
 
 # cuBLAS, cuDNN, cutlass support, turn on if needed
-echo "set(USE_CUBLAS OFF)" >> config.cmake
+echo "set(USE_CUBLAS  ON)" >> config.cmake
 echo "set(USE_CUDNN  OFF)" >> config.cmake
 echo "set(USE_CUTLASS OFF)" >> config.cmake
 
 cmake .. -DGTest_DIR=/home/douliyang/local/GTEST/lib/cmake/GTest && cmake --build . --parallel $(nproc)
 ```
 改脚本是总结官方文档的配置，编写的一键构建脚本。需要自行修改一下构建细节。我针对我的环境做了如下修改：  
-* set选项选择CUDA为on，其他device为off。
+* set选项选择CUDA为on，其他device为off。选择cublas为on。
 * llvm项目的链接，我选择链接为`-link-shared`，因为我的已有llvm项目的lib都是动态库。
 * `DGTest_DIR`选择传入源码编译的google test路径。
 
