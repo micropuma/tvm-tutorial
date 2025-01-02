@@ -121,5 +121,10 @@ pip3 install tornado psutil 'xgboost>=1.1.0' cloudpickle
 LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6 python end-to-end.py
 ```
 
+当运行`jupyter notebook`的时候，也出现版本过低，追根溯源，是/opt/conda/apt的版本问题，对于没有root权限的情况下，也可以：
+```shell
+LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6 jupyter notebook
+```
+
 ## References 
 1. [TVM from source doc](https://tvm.apache.org/docs/install/from_source.html)
